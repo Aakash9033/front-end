@@ -11,6 +11,9 @@
   margin: auto;
   padding: 40px 60px;
 }
+.login-container {
+  height: 528px;
+}
 .loginsignup-container h1 {
   margin: 20px 0px;
 }

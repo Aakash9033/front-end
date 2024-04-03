@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Css/Loginsignup.css";
 const LoginSignup = () => {
+  const [state, setState] = useState(true);
   return (
     <div className="loginsignup">
-      <div className="loginsignup-container">
-        <h1>Sign Up</h1>
+      <div
+        className={`loginsignup-container ${state ? "login-container" : ""}`}
+      >
+        <h1>{state ? "Login In" : "Sign Up"}</h1>
         <div className="loginsignup-feilds">
-          <input type="text" placeholder="Your Name" />
+          {!state && <input type="text" placeholder="Your Name" />}
           <input type="text" placeholder="Email Address" />
           <input type="text" placeholder="Password" />
         </div>
         <button>Continue</button>
         <p className="loginsignup-login">
-          Already have account?<span>Login Here</span>
+          {state ? "Dont't" : "Already"} have account?
+          <span onClick={() => setState(!state)}>
+            {state ? "Sign Up" : "Login Here"}
+          </span>
         </p>
         <div className="loginsignup-agree">
           <input type="checkbox" name="" id="" />
